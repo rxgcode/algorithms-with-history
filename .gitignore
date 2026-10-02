@@ -1,0 +1,11 @@
+# compiled programs
+*/palindromo
+*/palindromo_grande
+*/famoso
+*/prueba
+*/quince
+*/trios
+*/dardos
+*/puntos
+*.o
+.DS_Store
