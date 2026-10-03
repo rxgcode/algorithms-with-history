@@ -5,7 +5,7 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 
 | # | Problema | Carpeta | Vídeo |
 |---|---|---|---|
-| 1 | El misterio del 196 (números de Lychrel) | [`01-the-196-mystery`](01-the-196-mystery) | _próximamente_ |
+| 1 | El misterio del 196 (números de Lychrel) | [`01-the-196-mystery`](01-the-196-mystery) | [Ver short](https://youtube.com/shorts/MyjG1hMHh3I) |
 | 2 | La persona famosa (*celebrity problem*) | [`02-the-celebrity-problem`](02-the-celebrity-problem) | _próximamente_ |
 | 3 | El juego de sumar quince | [`03-the-game-of-fifteen`](03-the-game-of-fifteen) | _próximamente_ |
 | 4 | π con dardos (Monte Carlo) | [`04-pi-with-darts`](04-pi-with-darts) | _próximamente_ |

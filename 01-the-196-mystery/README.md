@@ -40,3 +40,7 @@ ningún palíndromo
 - **2015** · Romain Dolbeau alcanza mil millones de dígitos. Nada.
 
 Fuentes: Wikipedia, "Lychrel number"; Trigg (1967). Ejercicio inspirado en el 3.15 "Conjetura para la formación de palíndromos" del libro de ejercicios de C++ de profesores de la UCM.
+
+## Vídeo
+
+[Ver el short en YouTube](https://youtube.com/shorts/MyjG1hMHh3I)
