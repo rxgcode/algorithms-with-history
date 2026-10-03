@@ -52,3 +52,7 @@ De un millón a mil millones de dardos (mil veces más) no se gana ni una cifra 
 - **1946** · Stanislaw Ulam, convaleciente y jugando solitarios, propone simular muchas veces en lugar de calcular. Nicholas Metropolis lo bautiza **Monte Carlo**, por el casino. En la primavera de 1948 se ejecutan en la ENIAC los primeros cálculos Monte Carlo automáticos (Los Álamos).
 
 Fuentes: Wikipedia, "Monte Carlo method" y "Buffon's needle problem". Ejercicio inspirado en el 3.14 "Aproximación hacia π con dardos" del libro de ejercicios de C++ de profesores de la UCM.
+
+## Vídeo
+
+[Ver el short en YouTube](https://youtube.com/shorts/zHRd2ayBlxk)
