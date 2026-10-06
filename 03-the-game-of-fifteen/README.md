@@ -12,14 +12,14 @@ Parece un juego de cuentas… pero es **el tres en raya disfrazado**. En el cuad
 
 Hay exactamente 8 tríos del 1 al 9 que suman 15, y son justo las 8 líneas del tablero. Elegir un número es marcar su casilla.
 
-**Y en código, el truco al revés:** a la computadora no le hace falta el tablero. Cada jugador solo guarda qué números tiene (`dueno[n]` = `NADIE`, `TU` o `CPU`), y para saber si alguien ganó basta con buscar tres que sumen 15. El cuadrado mágico sirve para que *una persona* vea que es el tres en raya; al programa le basta con los números. Como decía Herbert Simon: resolver un problema es, sobre todo, representarlo bien.
+**Y en código, el truco al revés:** a la computadora no le hace falta el tablero. Cada jugador solo guarda qué números tiene (`owner[n]` = `NOBODY`, `HUMAN` o `CPU`), y para saber si alguien ganó basta con revisar los 8 tríos que suman 15 (`TRIPLES`). El cuadrado mágico sirve para que *una persona* vea que es el tres en raya; al programa le basta con los números. Como decía Herbert Simon: resolver un problema es, sobre todo, representarlo bien.
 
 ## Archivos
 
 | Archivo | Qué hace |
 |---|---|
-| `quince.h` | El juego sin tablero: `gana()` (¿tres números que suman 15?) y el algoritmo minimax `mejorJugada()`, que devuelve el número que juega la CPU. |
-| `trios.cpp` | La parte "humana" del truco: lista los tríos que suman 15 y comprueba con el cuadrado mágico que cada uno es una línea. |
+| `quince.h` | El juego sin tablero: `TRIPLES` (los 8 tríos que suman 15), `ownsTriple()`, `wins()` y el algoritmo minimax `bestMove()`, que devuelve el número que juega la CPU. |
+| `trios.cpp` | La parte "humana" del truco: lista los tríos que suman 15 y comprueba que son justo los de `TRIPLES` y las 8 líneas del cuadrado mágico. |
 | `quince.cpp` | Partida interactiva contra la CPU (`./quince`, o `./quince cpu` para que empiece ella). |
 | `prueba.cpp` | La CPU juega contra todas las respuestas posibles del rival. |
 

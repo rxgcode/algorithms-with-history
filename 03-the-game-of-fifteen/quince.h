@@ -1,52 +1,59 @@
 // El juego de sumar quince, programado SIN tablero.
 // El cuadrado mágico sirve para que una persona vea que es el tres en raya;
-// a la computadora le basta con los números: solo busca tres que sumen 15.
+// al programa le basta con los números.
 #pragma once
 
-enum Jugador { NADIE = 0, TU = 1, CPU = 2 };
+enum Player { NOBODY = 0, HUMAN = 1, CPU = 2 };
 
-// dueno[n] = de quién es el número n (1..9): NADIE, TU o CPU.
+// owner[n] = quién tiene el número n (1..9): NOBODY, HUMAN o CPU.
 
-// ¿alguien juntó tres que sumen 15?
-int gana(const int dueno[10], int jugador) {
-  for (int a = 1; a <= 9; a++)
-    for (int b = a + 1; b <= 9; b++) {
-      int c = 15 - a - b;   // el tercero
-      if (c > b && c <= 9 &&
-          dueno[a] == jugador &&
-          dueno[b] == jugador &&
-          dueno[c] == jugador) return 1;
-    }
-  return 0;
+// Los 8 tríos que suman 15 (= las 8 líneas del tres en raya; trios.cpp lo comprueba).
+const int TRIPLES[8][3] = {
+  {2,7,6}, {9,5,1}, {4,3,8}, {2,9,4},
+  {7,5,3}, {6,1,8}, {2,5,8}, {4,5,6} };
+
+// ¿Los tres números del trío son de este jugador?
+bool ownsTriple(const int triple[3], const int owner[10], int player) {
+  return owner[triple[0]] == player &&
+         owner[triple[1]] == player &&
+         owner[triple[2]] == player;
+}
+
+// ¿Alguien juntó tres que sumen 15?
+bool wins(const int owner[10], int player) {
+  for (auto& triple : TRIPLES)
+    if (ownsTriple(triple, owner, player)) return true;
+  return false;
 }
 
 // Minimax: +10 si gana la CPU, -10 si ganas tú (antes = mejor), 0 empate.
-int valor(int dueno[10], int turno, int prof) {
-  if (gana(dueno, CPU)) return 10 - prof;
-  if (gana(dueno, TU)) return prof - 10;
-  int mejor = (turno == CPU) ? -100 : 100, hay = 0;
+int score(int owner[10], int turn, int depth) {
+  if (wins(owner, CPU)) return 10 - depth;
+  if (wins(owner, HUMAN)) return depth - 10;
+  int best = (turn == CPU) ? -100 : 100;
+  bool moved = false;
   for (int n = 1; n <= 9; n++) {
-    if (dueno[n] != NADIE) continue;
-    hay = 1;
-    dueno[n] = turno;
-    int v = valor(dueno, turno == CPU ? TU : CPU, prof + 1);
-    dueno[n] = NADIE;
-    if (turno == CPU ? v > mejor : v < mejor) mejor = v;
+    if (owner[n] != NOBODY) continue;
+    moved = true;
+    owner[n] = turn;
+    int value = score(owner, turn == CPU ? HUMAN : CPU, depth + 1);
+    owner[n] = NOBODY;
+    if (turn == CPU ? value > best : value < best) best = value;
   }
-  return hay ? mejor : 0;
+  return moved ? best : 0;
 }
 
 // El algoritmo: prueba cada número libre y se queda con el mejor.
 // Si empatan, prefiere el 5, luego los pares (las esquinas del cuadrado).
-const int ORDEN[9] = { 5, 2, 4, 6, 8, 1, 3, 7, 9 };
-int mejorJugada(int dueno[10]) {
-  int mejor = -100, elegido = -1;
-  for (int n : ORDEN) {
-    if (dueno[n] != NADIE) continue;
-    dueno[n] = CPU;              // pruebo n
-    int v = valor(dueno, TU, 1); // el futuro
-    dueno[n] = NADIE;            // deshago
-    if (v > mejor) { mejor = v; elegido = n; }
+const int ORDER[9] = { 5, 2, 4, 6, 8, 1, 3, 7, 9 };
+int bestMove(int owner[10]) {
+  int best = -100, chosen = -1;
+  for (int n : ORDER) {
+    if (owner[n] != NOBODY) continue;
+    owner[n] = CPU;                     // pruebo
+    int value = score(owner, HUMAN, 1); // futuro
+    owner[n] = NOBODY;                  // deshago
+    if (value > best) { best = value; chosen = n; }
   }
-  return elegido;
+  return chosen;
 }

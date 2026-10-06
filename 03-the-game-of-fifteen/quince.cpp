@@ -5,50 +5,51 @@
 #include <cstring>
 #include "quince.h"
 
-int dueno[10];
+int owner[10];
 
-void mostrar() {
+void show() {
   printf("   ");
   for (int n = 1; n <= 9; n++)
-    printf(dueno[n] == TU ? "\033[35m%d\033[0m " : dueno[n] == CPU ? "\033[32m%d\033[0m " : "\033[90m%d\033[0m ", n);
+    printf(owner[n] == HUMAN ? "\033[35m%d\033[0m " : owner[n] == CPU ? "\033[32m%d\033[0m " : "\033[90m%d\033[0m ", n);
   printf("\n");
 }
 
-void trio(int jugador) {
-  for (int a = 1; a <= 9; a++)
-    for (int b = a + 1; b <= 9; b++) {
-      int c = 15 - a - b;
-      if (c > b && c <= 9 && dueno[a] == jugador && dueno[b] == jugador && dueno[c] == jugador) {
-        printf("%d + %d + %d = 15\n", a, b, c);
-        return;
-      }
+void printTriple(int player) {
+  for (auto& triple : TRIPLES)
+    if (ownsTriple(triple, owner, player)) {
+      int a = triple[0], b = triple[1], c = triple[2], x;
+      if (a > b) { x = a; a = b; b = x; }
+      if (b > c) { x = b; b = c; c = x; }
+      if (a > b) { x = a; a = b; b = x; }
+      printf("%d + %d + %d = 15\n", a, b, c);
+      return;
     }
 }
 
 int main(int argc, char* argv[]) {
-  int turno = (argc > 1 && !strcmp(argv[1], "cpu")) ? CPU : TU;
-  for (int jugada = 0; jugada < 9; jugada++) {
-    if (turno == CPU) {
-      int n = mejorJugada(dueno);
-      dueno[n] = CPU;
+  int turn = (argc > 1 && !strcmp(argv[1], "cpu")) ? CPU : HUMAN;
+  for (int move = 0; move < 9; move++) {
+    if (turn == CPU) {
+      int n = bestMove(owner);
+      owner[n] = CPU;
       printf("\033[32mCPU: %d\033[0m", n);
-      mostrar();
+      show();
     } else {
       int n;
       printf("tu número: ");
       fflush(stdout);
       if (scanf("%d", &n) != 1) return 0;
-      if (n < 1 || n > 9 || dueno[n] != NADIE) { printf("ese no vale\n"); jugada--; continue; }
-      dueno[n] = TU;
-      if (gana(dueno, TU) || jugada == 8) { printf("      "); mostrar(); }
+      if (n < 1 || n > 9 || owner[n] != NOBODY) { printf("ese no vale\n"); move--; continue; }
+      owner[n] = HUMAN;
+      if (wins(owner, HUMAN) || move == 8) { printf("      "); show(); }
     }
-    if (gana(dueno, turno)) {
-      printf(turno == CPU ? "\033[32mGana la CPU: " : "\033[35mGanas tú: ");
-      trio(turno);
+    if (wins(owner, turn)) {
+      printf(turn == CPU ? "\033[32mGana la CPU: " : "\033[35mGanas tú: ");
+      printTriple(turn);
       printf("\033[0m");
       return 0;
     }
-    turno = (turno == CPU) ? TU : CPU;
+    turn = (turn == CPU) ? HUMAN : CPU;
   }
   printf("\033[33mEmpate.\033[0m\n");
 }
