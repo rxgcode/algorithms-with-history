@@ -16,17 +16,17 @@ Hay exactamente 8 tríos del 1 al 9 que suman 15, y son justo las 8 líneas del 
 
 | Archivo | Qué hace |
 |---|---|
-| `quince.h` | La idea: el cuadrado mágico, `casilla(n)`, y un jugador perfecto (minimax) sobre el tablero traducido. |
+| `quince.h` | La idea: el cuadrado mágico, `casilla(n)`, y el algoritmo que nunca pierde (minimax) sobre el tablero traducido. |
 | `trios.cpp` | Fuerza bruta: lista los tríos que suman 15 y comprueba que cada uno es una línea. |
-| `quince.cpp` | Partida interactiva contra la computadora (`./quince`, o `./quince ia` para que empiece ella). |
-| `prueba.cpp` | Juega contra todas las respuestas posibles del rival. |
+| `quince.cpp` | Partida interactiva contra el algoritmo (`./quince`, o `./quince algoritmo` para que empiece él). |
+| `prueba.cpp` | El algoritmo juega contra todas las respuestas posibles del rival. |
 
 ## Ejecutar
 
 ```bash
 make
 ./trios      # 8 tríos · 8 líneas del tres en raya
-./prueba     # 613 partidas: gana 450, empates 163, pierde 0
+./prueba     # 613 partidas: gana el algoritmo 450, empates 163, ganas tú 0
 ./quince     # juega tú
 ```
 

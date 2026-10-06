@@ -17,6 +17,6 @@ jobs:
           (cd 01-the-196-mystery && ./palindromo_grande 196 50000 | strip | grep -q "20779 dígitos")
           (cd 02-the-celebrity-problem && ./prueba | strip | grep -q "5000/5000")
           (cd 03-the-game-of-fifteen && ./trios | strip | grep -q "8 tríos")
-          (cd 03-the-game-of-fifteen && ./prueba | strip | grep -q "ganas tú:   0")
+          (cd 03-the-game-of-fifteen && ./prueba | strip | grep -Eq "ganas tú: +0$")
           (cd 04-pi-with-darts && ./dardos 1000000 | strip | grep -q "3.141008")
           echo "All results match the videos ✔"
