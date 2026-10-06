@@ -1,57 +1,54 @@
-// Juega a sumar quince contra un algoritmo que nunca pierde (minimax).
+// Juega a sumar quince contra la CPU, que nunca pierde (minimax).
 // Uso: ./quince        (empiezas tú)
-//      ./quince algoritmo     (empieza el algoritmo)
+//      ./quince cpu    (empieza la CPU)
 #include <cstdio>
 #include <cstring>
 #include "quince.h"
 
-int t[9];
+int dueno[10];
 
 void mostrar() {
   printf("   ");
-  for (int n = 1; n <= 9; n++) {
-    int q = t[casilla(n)];
-    printf(q == TU ? "\033[35m%d\033[0m " : q == ALGORITMO ? "\033[32m%d\033[0m " : "\033[90m%d\033[0m ", n);
-  }
+  for (int n = 1; n <= 9; n++)
+    printf(dueno[n] == TU ? "\033[35m%d\033[0m " : dueno[n] == CPU ? "\033[32m%d\033[0m " : "\033[90m%d\033[0m ", n);
   printf("\n");
 }
 
 void trio(int jugador) {
-  for (auto& l : LINEAS)
-    if (t[l[0]] == jugador && t[l[1]] == jugador && t[l[2]] == jugador) {
-      int a = CUADRADO[l[0]], b = CUADRADO[l[1]], c = CUADRADO[l[2]], x;
-      if (a > b) { x = a; a = b; b = x; }
-      if (b > c) { x = b; b = c; c = x; }
-      if (a > b) { x = a; a = b; b = x; }
-      printf("%d + %d + %d = 15\n", a, b, c);
-      return;
+  for (int a = 1; a <= 9; a++)
+    for (int b = a + 1; b <= 9; b++) {
+      int c = 15 - a - b;
+      if (c > b && c <= 9 && dueno[a] == jugador && dueno[b] == jugador && dueno[c] == jugador) {
+        printf("%d + %d + %d = 15\n", a, b, c);
+        return;
+      }
     }
 }
 
 int main(int argc, char* argv[]) {
-  int turno = (argc > 1 && !strcmp(argv[1], "algoritmo")) ? ALGORITMO : TU;
+  int turno = (argc > 1 && !strcmp(argv[1], "cpu")) ? CPU : TU;
   for (int jugada = 0; jugada < 9; jugada++) {
-    if (turno == ALGORITMO) {
-      int c = mejorJugada(t);
-      t[c] = ALGORITMO;
-      printf("\033[32malgoritmo: %d\033[0m", CUADRADO[c]);
+    if (turno == CPU) {
+      int n = mejorJugada(dueno);
+      dueno[n] = CPU;
+      printf("\033[32mCPU: %d\033[0m", n);
       mostrar();
     } else {
       int n;
       printf("tu número: ");
       fflush(stdout);
       if (scanf("%d", &n) != 1) return 0;
-      if (n < 1 || n > 9 || t[casilla(n)] != LIBRE) { printf("ese no vale\n"); jugada--; continue; }
-      t[casilla(n)] = TU;
-      if (tresEnRaya(t, TU) || jugada == 8) { printf("            "); mostrar(); }
+      if (n < 1 || n > 9 || dueno[n] != NADIE) { printf("ese no vale\n"); jugada--; continue; }
+      dueno[n] = TU;
+      if (gana(dueno, TU) || jugada == 8) { printf("      "); mostrar(); }
     }
-    if (tresEnRaya(t, turno)) {
-      printf(turno == ALGORITMO ? "\033[32mGana el algoritmo: " : "\033[35mGanas tú: ");
+    if (gana(dueno, turno)) {
+      printf(turno == CPU ? "\033[32mGana la CPU: " : "\033[35mGanas tú: ");
       trio(turno);
       printf("\033[0m");
       return 0;
     }
-    turno = (turno == ALGORITMO) ? TU : ALGORITMO;
+    turno = (turno == CPU) ? TU : CPU;
   }
   printf("\033[33mEmpate.\033[0m\n");
 }

@@ -12,21 +12,23 @@ Parece un juego de cuentas… pero es **el tres en raya disfrazado**. En el cuad
 
 Hay exactamente 8 tríos del 1 al 9 que suman 15, y son justo las 8 líneas del tablero. Elegir un número es marcar su casilla.
 
+**Y en código, el truco al revés:** a la computadora no le hace falta el tablero. Cada jugador solo guarda qué números tiene (`dueno[n]` = `NADIE`, `TU` o `CPU`), y para saber si alguien ganó basta con buscar tres que sumen 15. El cuadrado mágico sirve para que *una persona* vea que es el tres en raya; al programa le basta con los números. Como decía Herbert Simon: resolver un problema es, sobre todo, representarlo bien.
+
 ## Archivos
 
 | Archivo | Qué hace |
 |---|---|
-| `quince.h` | La idea: el cuadrado mágico, `casilla(n)`, y el algoritmo que nunca pierde (minimax) sobre el tablero traducido. |
-| `trios.cpp` | Fuerza bruta: lista los tríos que suman 15 y comprueba que cada uno es una línea. |
-| `quince.cpp` | Partida interactiva contra el algoritmo (`./quince`, o `./quince algoritmo` para que empiece él). |
-| `prueba.cpp` | El algoritmo juega contra todas las respuestas posibles del rival. |
+| `quince.h` | El juego sin tablero: `gana()` (¿tres números que suman 15?) y el algoritmo minimax `mejorJugada()`, que devuelve el número que juega la CPU. |
+| `trios.cpp` | La parte "humana" del truco: lista los tríos que suman 15 y comprueba con el cuadrado mágico que cada uno es una línea. |
+| `quince.cpp` | Partida interactiva contra la CPU (`./quince`, o `./quince cpu` para que empiece ella). |
+| `prueba.cpp` | La CPU juega contra todas las respuestas posibles del rival. |
 
 ## Ejecutar
 
 ```bash
 make
 ./trios      # 8 tríos · 8 líneas del tres en raya
-./prueba     # 613 partidas: gana el algoritmo 450, empates 163, ganas tú 0
+./prueba     # 613 partidas: gana la CPU 450, empates 163, ganas tú 0
 ./quince     # juega tú
 ```
 
