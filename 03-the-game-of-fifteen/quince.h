@@ -2,6 +2,7 @@
 // El cuadrado mágico sirve para que una persona vea que es el tres en raya;
 // al programa le basta con los números.
 #pragma once
+#include <algorithm>
 
 enum Player { NOBODY = 0, HUMAN = 1, CPU = 2 };
 
@@ -26,33 +27,34 @@ bool wins(const int owner[10], int player) {
   return false;
 }
 
-// Minimax: +10 si gana la CPU, -10 si ganas tú (antes = mejor), 0 empate.
-int score(int owner[10], int turn, int depth) {
-  if (wins(owner, CPU)) return 10 - depth;
-  if (wins(owner, HUMAN)) return depth - 10;
-  int best = (turn == CPU) ? -100 : 100;
-  bool moved = false;
+// ¿cuánto vale la partida para quien juega?
+// positivo = gana · 0 = empate · negativo = pierde
+// (ambos juegan perfecto; ganar antes vale más)
+int score(int owner[10], int me, int rival,
+          int depth) {
+  if (wins(owner, rival)) return depth - 10;
+  int best = -100;
   for (int n = 1; n <= 9; n++) {
     if (owner[n] != NOBODY) continue;
-    moved = true;
-    owner[n] = turn;
-    int value = score(owner, turn == CPU ? HUMAN : CPU, depth + 1);
-    owner[n] = NOBODY;
-    if (turn == CPU ? value > best : value < best) best = value;
+    owner[n] = me;                       // pruebo
+    // le toca al rival: su ganancia es mi pérdida
+    int value = -score(owner, rival, me, depth + 1);
+    owner[n] = NOBODY;                   // deshago
+    best = std::max(best, value);
   }
-  return moved ? best : 0;
+  return best == -100 ? 0 : best;        // empate
 }
 
-// El algoritmo: prueba cada número libre y se queda con el mejor.
+// El algoritmo: prueba cada número libre y se queda con el de mejor score.
 // Si empatan, prefiere el 5, luego los pares (las esquinas del cuadrado).
 const int ORDER[9] = { 5, 2, 4, 6, 8, 1, 3, 7, 9 };
 int bestMove(int owner[10]) {
-  int best = -100, chosen = -1;
+  int best = -100, chosen = 0;
   for (int n : ORDER) {
     if (owner[n] != NOBODY) continue;
-    owner[n] = CPU;                     // pruebo
-    int value = score(owner, HUMAN, 1); // futuro
-    owner[n] = NOBODY;                  // deshago
+    owner[n] = CPU;
+    int value = -score(owner, HUMAN, CPU, 1);
+    owner[n] = NOBODY;
     if (value > best) { best = value; chosen = n; }
   }
   return chosen;

@@ -18,7 +18,7 @@ Hay exactamente 8 tríos del 1 al 9 que suman 15, y son justo las 8 líneas del 
 
 | Archivo | Qué hace |
 |---|---|
-| `quince.h` | El juego sin tablero: `TRIPLES` (los 8 tríos que suman 15), `ownsTriple()`, `wins()` y el algoritmo minimax `bestMove()`, que devuelve el número que juega la CPU. |
+| `quince.h` | El juego sin tablero: `TRIPLES` (los 8 tríos que suman 15), `ownsTriple()`, `wins()` `score()` (minimax en versión negamax: cuánto vale la partida para quien juega) y `bestMove()`, que devuelve el número que juega la CPU. |
 | `trios.cpp` | La parte "humana" del truco: lista los tríos que suman 15 y comprueba que son justo los de `TRIPLES` y las 8 líneas del cuadrado mágico. |
 | `quince.cpp` | Partida interactiva contra la CPU (`./quince`, o `./quince cpu` para que empiece ella). |
 | `prueba.cpp` | La CPU juega contra todas las respuestas posibles del rival. |
