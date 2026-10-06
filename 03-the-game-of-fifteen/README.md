@@ -12,7 +12,7 @@ Parece un juego de cuentas… pero es **el tres en raya disfrazado**. En el cuad
 
 Hay exactamente 8 tríos del 1 al 9 que suman 15, y son justo las 8 líneas del tablero. Elegir un número es marcar su casilla.
 
-**Y en código, el truco al revés:** a la computadora no le hace falta el tablero. Cada jugador solo guarda qué números tiene (`owner[n]` = `NOBODY`, `HUMAN` o `CPU`), y para saber si alguien ganó basta con revisar los 8 tríos que suman 15 (`TRIPLES`). El cuadrado mágico sirve para que *una persona* vea que es el tres en raya; al programa le basta con los números. Como decía Herbert Simon: resolver un problema es, sobre todo, representarlo bien.
+**Y en código, el tablero ni siquiera hace falta:** eso es para nuestros ojos. Cada jugador solo guarda qué números tiene (`owner[n]` = `NOBODY`, `HUMAN` o `CPU`), y para saber si alguien ganó basta con revisar los 8 tríos que suman 15 (`TRIPLES`). El cuadrado mágico sirve para que *una persona* vea que es el tres en raya; al programa le basta con los números. Como decía Herbert Simon: resolver un problema es, sobre todo, representarlo bien.
 
 ## Archivos
 
