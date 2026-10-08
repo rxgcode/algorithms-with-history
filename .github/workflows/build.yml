@@ -19,4 +19,8 @@ jobs:
           (cd 03-the-game-of-fifteen && ./trios | strip | grep -q "8 tríos")
           (cd 03-the-game-of-fifteen && ./prueba | strip | grep -Eq "ganas tú: +0$")
           (cd 04-pi-with-darts && ./dardos 1000000 | strip | grep -q "3.141008")
+          (cd 05-self-correcting-numbers && ./digito | strip | grep -q "Digito de 45108273: 1")
+          (cd 05-self-correcting-numbers && ./luhn | strip | grep -q "4111111111901115  ->  ✓ pasa")
+          (cd 05-self-correcting-numbers && ./hamming | strip | grep -q "error en el bit 5")
+          (cd 05-self-correcting-numbers && ./simulacion | strip | grep -q "letras):  0.00 %")
           echo "All results match the videos ✔"

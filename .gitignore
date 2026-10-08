@@ -7,5 +7,9 @@
 */trios
 */dardos
 */puntos
+*/digito
+*/luhn
+*/hamming
+*/simulacion
 *.o
 .DS_Store
