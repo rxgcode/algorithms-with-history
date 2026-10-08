@@ -79,4 +79,4 @@ Con el mismo mensaje, el nivel **L** da un QR de 29 × 29 módulos y el **H** un
 
 ## Vídeo
 
-[Ver el vídeo en YouTube](VIDEO_URL)
+[Ver el vídeo en YouTube](https://www.youtube.com/watch?v=vuo-ulqw0Wo)
