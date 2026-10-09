@@ -11,5 +11,7 @@
 */luhn
 */hamming
 */simulacion
+*/rs
+*/intercalado
 *.o
 .DS_Store

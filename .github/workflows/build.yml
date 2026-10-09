@@ -23,4 +23,8 @@ jobs:
           (cd 05-self-correcting-numbers && ./luhn | strip | grep -q "4111111111901115  ->  ✓ pasa")
           (cd 05-self-correcting-numbers && ./hamming | strip | grep -q "error en el bit 5")
           (cd 05-self-correcting-numbers && ./simulacion | strip | grep -q "letras):  0.00 %")
+          (cd 06-reed-solomon && ./rs | strip | grep -q "5 errores corregidos")
+          (cd 06-reed-solomon && ./rs | strip | grep -q "no se puede: demasiados errores")
+          (cd 06-reed-solomon && ./rs --prueba | strip | grep -q "detectado 2000/2000 · corregido mal sin avisar 0/2000")
+          (cd 06-reed-solomon && ./intercalado 112 | strip | grep -q "el peor pierde 4 de 28 bytes")
           echo "All results match the videos ✔"
