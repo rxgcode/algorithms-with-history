@@ -43,4 +43,4 @@ Ojo: si algún número no llegara nunca a 1, `pasos()` no terminaría jamás. Po
 
 ## Vídeo
 
-*pendiente*
+▶️ [La conjetura de Collatz: una regla de niño que nadie ha podido demostrar](https://youtube.com/shorts/ObevqFQaGUI)
