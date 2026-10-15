@@ -15,3 +15,5 @@
 */intercalado
 *.o
 .DS_Store
+*/collatz
+*/verifica

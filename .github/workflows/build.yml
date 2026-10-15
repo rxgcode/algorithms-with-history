@@ -27,4 +27,7 @@ jobs:
           (cd 06-reed-solomon && ./rs | strip | grep -q "no se puede: demasiados errores")
           (cd 06-reed-solomon && ./rs --prueba | strip | grep -q "detectado 2000/2000 · corregido mal sin avisar 0/2000")
           (cd 06-reed-solomon && ./intercalado 112 | strip | grep -q "el peor pierde 4 de 28 bytes")
+          (cd 07-collatz-conjecture && ./collatz 6 | strip | grep -q "8 pasos · máximo 16")
+          (cd 07-collatz-conjecture && ./collatz 27 | strip | grep -q "111 pasos · máximo 9232 (paso 77)")
+          (cd 07-collatz-conjecture && ./verifica 10000000 | strip | grep -q "el más largo: 8 400 511")
           echo "All results match the videos ✔"

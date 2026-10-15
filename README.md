@@ -11,6 +11,7 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 | 4 | π con dardos (Monte Carlo) | [`04-pi-with-darts`](04-pi-with-darts) | [Ver short](https://youtube.com/shorts/zHRd2ayBlxk) |
 | 5 | Números que se corrigen solos (DNI, Luhn, Hamming, QR) · *vídeo largo* | [`05-self-correcting-numbers`](05-self-correcting-numbers) | [Ver vídeo](https://www.youtube.com/watch?v=vuo-ulqw0Wo) |
 | 6 | Reed-Solomon: cómo se reparan pedazos enteros (CD, QR, Voyager) · *vídeo largo, parte 2* | [`06-reed-solomon`](06-reed-solomon) | *pendiente* |
+| 7 | La conjetura de Collatz (3n + 1) | [`07-collatz-conjecture`](07-collatz-conjecture) | *pendiente* |
 
 ## Compilar y ejecutar
 
