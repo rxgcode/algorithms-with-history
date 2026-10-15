@@ -30,4 +30,9 @@ jobs:
           (cd 07-collatz-conjecture && ./collatz 6 | strip | grep -q "8 pasos · máximo 16")
           (cd 07-collatz-conjecture && ./collatz 27 | strip | grep -q "111 pasos · máximo 9232 (paso 77)")
           (cd 07-collatz-conjecture && ./verifica 10000000 | strip | grep -q "el más largo: 8 400 511")
+          (cd 08-goldbach-conjecture && ./goldbach 28 | strip | grep -qx "2 formas")
+          (cd 08-goldbach-conjecture && ./goldbach 100 --cuenta | strip | grep -qx "6 formas")
+          (cd 08-goldbach-conjecture && ./goldbach 1000 --cuenta | strip | grep -qx "28 formas")
+          (cd 08-goldbach-conjecture && ./verifica 100000000 | strip | grep -q "pares del 4 al 100 000 000: 49 999 999")
+          (cd 08-goldbach-conjecture && ./verifica 100000000 | strip | grep -q "todos son suma de dos primos ✓")
           echo "All results match the videos ✔"
