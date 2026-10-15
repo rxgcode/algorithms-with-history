@@ -12,6 +12,7 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 | 5 | Números que se corrigen solos (DNI, Luhn, Hamming, QR) · *vídeo largo* | [`05-self-correcting-numbers`](05-self-correcting-numbers) | [Ver vídeo](https://www.youtube.com/watch?v=vuo-ulqw0Wo) |
 | 6 | Reed-Solomon: cómo se reparan pedazos enteros (CD, QR, Voyager) · *vídeo largo, parte 2* | [`06-reed-solomon`](06-reed-solomon) | *pendiente* |
 | 7 | La conjetura de Collatz (3n + 1) | [`07-collatz-conjecture`](07-collatz-conjecture) | [Ver short](https://youtube.com/shorts/ObevqFQaGUI) |
+| 8 | La conjetura de Goldbach (suma de dos primos) | [`08-goldbach-conjecture`](08-goldbach-conjecture) | [Ver short](https://youtube.com/shorts/Yg6Hu66eWj0) |
 
 ## Compilar y ejecutar
 

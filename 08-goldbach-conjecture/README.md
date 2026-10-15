@@ -36,4 +36,4 @@ make
 
 ## Vídeo
 
-*pendiente*
+▶️ [La conjetura de Goldbach: una apuesta de 1742 que nadie ha podido demostrar](https://youtube.com/shorts/Yg6Hu66eWj0)
