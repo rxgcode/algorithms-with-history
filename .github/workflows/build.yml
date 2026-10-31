@@ -35,4 +35,8 @@ jobs:
           (cd 08-goldbach-conjecture && ./goldbach 1000 --cuenta | strip | grep -qx "28 formas")
           (cd 08-goldbach-conjecture && ./verifica 100000000 | strip | grep -q "pares del 4 al 100 000 000: 49 999 999")
           (cd 08-goldbach-conjecture && ./verifica 100000000 | strip | grep -q "todos son suma de dos primos ✓")
+          (cd 09-caesar-cipher && ./cesar | strip | grep -q "clave  3 → ATACAR AL AMANECER   ← español")
+          (cd 09-caesar-cipher && ./cesar "DWDFDU DO DPDQHFHU" --distancias | strip | grep -q "clave  3 → ATACAR AL AMANECER  distancia 18")
+          (cd 09-caesar-cipher && ./cesar "DWDFDU DO DPDQHFHU" --distancias | strip | grep -q "clave 16 → NGNPNE NY NZNARPRE  distancia 59")
+          (cd 09-caesar-cipher && ./cesar "DT WPPD PDEZ JL AFPOPD CZXAPC L NPDLC" | strip | grep -q "clave 11 → SI LEES ESTO YA PUEDES ROMPER A CESAR   ← español")
           echo "All results match the videos ✔"
