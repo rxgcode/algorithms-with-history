@@ -39,3 +39,7 @@ pruebas: 5000/5000 coinciden (y eliminacion <= 3(n-1) preguntas)
 K. N. King y B. Smith-Thomas, "An optimal algorithm for sink-finding", *Information Processing Letters* 14(3), 1982.
 
 Ejercicio inspirado en el 4.19 "Búsqueda de la persona famosa en una reunión" del libro de ejercicios de C++ de profesores de la UCM.
+
+## Vídeo
+
+[Ver el short en YouTube](https://youtube.com/shorts/AN2vD0AXbfQ)

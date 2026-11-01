@@ -40,3 +40,7 @@ make
 - **1978** · Martin Gardner, *Aha! Insight* ("¡Ajá! Inspiración"), lo divulga como "Fifteen".
 
 Ejercicio inspirado en el 4.14 "El juego de sumar quince" del libro de ejercicios de C++ de profesores de la UCM.
+
+## Vídeo
+
+[Ver el short en YouTube](https://youtube.com/shorts/PvyeLaxVgII)
