@@ -39,4 +39,11 @@ jobs:
           (cd 09-caesar-cipher && ./cesar "DWDFDU DO DPDQHFHU" --distancias | strip | grep -q "clave  3 → ATACAR AL AMANECER  distancia 18")
           (cd 09-caesar-cipher && ./cesar "DWDFDU DO DPDQHFHU" --distancias | strip | grep -q "clave 16 → NGNPNE NY NZNARPRE  distancia 59")
           (cd 09-caesar-cipher && ./cesar "DT WPPD PDEZ JL AFPOPD CZXAPC L NPDLC" | strip | grep -q "clave 11 → SI LEES ESTO YA PUEDES ROMPER A CESAR   ← español")
+          (cd 10-kaprekar-constant && ./kaprekar 1998 | strip | grep -q "6174 en 3 pasos")
+          (cd 10-kaprekar-constant && ./kaprekar 2111 --sin-ceros | strip | grep -q "atascado en 0")
+          (cd 10-kaprekar-constant && ./kaprekar 2111 | strip | grep -q "6174 en 5 pasos")
+          (cd 10-kaprekar-constant && ./verifica | strip | grep -q "llegan a 6174: 8991 de 8991")
+          (cd 10-kaprekar-constant && ./verifica | strip | grep -q "el que más tarda: 7 pasos")
+          (cd 10-kaprekar-constant && ./verifica 1900 2026 | strip | grep -Eq "7 pasos: +18$")
+          (cd 10-kaprekar-constant && ./otras 3 | strip | grep -q "495  (fijo)")
           echo "All results match the videos ✔"
