@@ -15,6 +15,7 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 | 8 | La conjetura de Goldbach (suma de dos primos) | [`08-goldbach-conjecture`](08-goldbach-conjecture) | [Ver short](https://youtube.com/shorts/Yg6Hu66eWj0) |
 | 9 | El cifrado César (fuerza bruta + análisis de frecuencias) | [`09-caesar-cipher`](09-caesar-cipher) | *pendiente* |
 | 10 | El 6174 (constante de Kaprekar) | [`10-kaprekar-constant`](10-kaprekar-constant) | *pendiente* |
+| 11 | El problema de Monty Hall (¿te quedas o cambias?) | [`11-monty-hall`](11-monty-hall) | *pendiente* |
 
 ## Compilar y ejecutar
 

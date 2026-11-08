@@ -46,4 +46,7 @@ jobs:
           (cd 10-kaprekar-constant && ./verifica | strip | grep -q "el que más tarda: 7 pasos")
           (cd 10-kaprekar-constant && ./verifica 1900 2026 | strip | grep -Eq "7 pasos: +18$")
           (cd 10-kaprekar-constant && ./otras 3 | strip | grep -q "495  (fijo)")
+          (cd 11-monty-hall && ./monty 1000000 | strip | grep -q "cambiar:  666266 victorias (66.6 %)")
+          (cd 11-monty-hall && ./monty 1000000 100 | strip | grep -q "cambiar:  990053 victorias (99.0 %)")
+          (cd 11-monty-hall && ./monty 1000000 3 --azar | strip | grep -q "cambiar:  333616 victorias (50.1 %)")
           echo "All results match the videos ✔"
