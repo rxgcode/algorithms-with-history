@@ -31,3 +31,7 @@ El tiempo que imprime es el promedio de 1000 rondas de búsqueda (las 25 claves)
 - **1915:** el ejército ruso lo usó porque sus tropas no dominaban cifrados más complicados; los alemanes y austriacos leían sus mensajes sin dificultad (D. Kahn, *The Codebreakers*, 1967).
 - **2006:** Bernardo Provenzano, jefe de la mafia siciliana, usaba una variante con números (A = 4, B = 5…); descifrar sus notas ayudó a la investigación que terminó con su arresto ([The Register, 19/04/2006](https://www.theregister.com/2006/04/19/mafia_don_clueless_crypto/)).
 - El ejemplo usa el alfabeto moderno A–Z (26 letras, sin Ñ); el latino de César no tenía J, U ni W.
+
+## Vídeo
+
+▶️ [Cifrado César: así escribía Julio César sus mensajes secretos (y así se rompe)](https://youtube.com/shorts/8kEfBMP6TME)

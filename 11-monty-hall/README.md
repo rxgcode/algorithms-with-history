@@ -49,3 +49,7 @@ La semilla es fija (1990), así que siempre salen los mismos números.
 - **2008:** sale en la película *21*: un profesor del MIT se lo plantea a un alumno en clase.
 - **2010:** Herbranson y Schroeder muestran que unas palomas aprenden a cambiar casi siempre; las personas, con el mismo entrenamiento, no tanto.
 - Fuentes: [Wikipedia, «Monty Hall problem»](https://en.wikipedia.org/wiki/Monty_Hall_problem) · J. Tierney, «Behind Monty Hall's Doors: Puzzle, Debate and Answer?», *The New York Times* (21/07/1991) · W. Herbranson y J. Schroeder, [«Are birds smarter than mathematicians?»](https://pmc.ncbi.nlm.nih.gov/articles/PMC3086893/), *J. Comparative Psychology* 124 (2010).
+
+## Vídeo
+
+▶️ [El problema de Monty Hall: ¿te quedas o cambias de puerta?](https://youtube.com/shorts/cx_fuVQpte8)

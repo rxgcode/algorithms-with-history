@@ -41,3 +41,7 @@ make
 - **1946–1949:** Dattatreya Ramchandra Kaprekar (1905–1986), profesor de matemáticas de colegio en Devlali (India), encuentra la propiedad y la presenta en 1949 en la Madras Mathematical Conference.
 - **1975:** Martin Gardner la da a conocer en su columna «Mathematical Games» de *Scientific American* (marzo).
 - Fuentes: [MacTutor, St Andrews](https://mathshistory.st-andrews.ac.uk/Biographies/Kaprekar/) · Y. Nishiyama, [«Mysterious number 6174»](https://plus.maths.org/content/mysterious-number-6174), *Plus Magazine* (2006).
+
+## Vídeo
+
+▶️ [El 6174: el número al que llega cualquier año (constante de Kaprekar)](https://youtube.com/shorts/YesfGdUeDYI)

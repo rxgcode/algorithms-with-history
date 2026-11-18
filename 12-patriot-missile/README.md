@@ -52,3 +52,7 @@ make
 - U.S. GAO, «Patriot Missile Defense: Software Problem Led to System Failure at Dhahran, Saudi Arabia», GAO/IMTEC-92-26 (04/02/1992): https://www.gao.gov/products/imtec-92-26
 - R. Skeel, «Roundoff Error and the Patriot Missile», SIAM News 25(4), 1992.
 - D. N. Arnold, «The Patriot Missile Failure»: https://www-users.cse.umn.edu/~arnold/disasters/patriot.html
+
+## Vídeo
+
+▶️ [El 0,1 que dejó pasar un misil: 28 soldados (Patriot, 1991)](https://youtube.com/shorts/IKjiOznpoPA)
