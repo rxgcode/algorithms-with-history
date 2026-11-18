@@ -16,6 +16,7 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 | 9 | El cifrado César (fuerza bruta + análisis de frecuencias) | [`09-caesar-cipher`](09-caesar-cipher) | *pendiente* |
 | 10 | El 6174 (constante de Kaprekar) | [`10-kaprekar-constant`](10-kaprekar-constant) | *pendiente* |
 | 11 | El problema de Monty Hall (¿te quedas o cambias?) | [`11-monty-hall`](11-monty-hall) | *pendiente* |
+| 12 | El 0,1 que dejó pasar un misil (error de redondeo del Patriot, 1991) | [`12-patriot-missile`](12-patriot-missile) | *pendiente* |
 
 ## Compilar y ejecutar
 

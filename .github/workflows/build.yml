@@ -49,4 +49,7 @@ jobs:
           (cd 11-monty-hall && ./monty 1000000 | strip | grep -q "cambiar:  666266 victorias (66.6 %)")
           (cd 11-monty-hall && ./monty 1000000 100 | strip | grep -q "cambiar:  990053 victorias (99.0 %)")
           (cd 11-monty-hall && ./monty 1000000 3 --azar | strip | grep -q "cambiar:  333616 victorias (50.1 %)")
+          (cd 12-patriot-missile && ./patriot | strip | grep -q "error por décima: 0.0000000954 s")
+          (cd 12-patriot-missile && ./patriot | strip | grep -Eq "^ +100 +0.3433 +575$")
+          (cd 12-patriot-missile && ./patriot 0.1 | strip | grep -q "error de 0.10 s tras 29.1 horas encendido")
           echo "All results match the videos ✔"
