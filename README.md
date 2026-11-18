@@ -17,6 +17,9 @@ Cada vídeo resuelve un problema clásico en C++ y lo ejecuta de verdad: los res
 | 10 | El 6174 (constante de Kaprekar) | [`10-kaprekar-constant`](10-kaprekar-constant) | [Ver short](https://youtube.com/shorts/YesfGdUeDYI) |
 | 11 | El problema de Monty Hall (¿te quedas o cambias?) | [`11-monty-hall`](11-monty-hall) | [Ver short](https://youtube.com/shorts/cx_fuVQpte8) |
 | 12 | El 0,1 que dejó pasar un misil (error de redondeo del Patriot, 1991) | [`12-patriot-missile`](12-patriot-missile) | [Ver short](https://youtube.com/shorts/IKjiOznpoPA) |
+| 13 | 12 ÷ 2 × 3: ¿18 o 2? (orden de las operaciones y multiplicación implícita) | [`13-order-of-operations`](13-order-of-operations) | [Ver short](https://youtube.com/shorts/_zBu0mbBvYk) |
+| 14 | Positivo en un test que acierta el 99 % (teorema de Bayes y la tasa base) | [`14-base-rate-test`](14-base-rate-test) | *pendiente* |
+| 15 | El triángulo de Reuleaux (ancho constante: rueda como un círculo) | [`15-reuleaux-triangle`](15-reuleaux-triangle) | *pendiente* |
 
 ## Compilar y ejecutar
 
