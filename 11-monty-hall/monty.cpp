@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <cstdint>
 #include <random>
 
 #define VERDE "\x1b[1;32m"
@@ -17,7 +18,16 @@ int main(int argc, char** argv) {
     int puertas = argc > 2 ? atoi(argv[2]) : 3;
     bool azar = argc > 3 && strcmp(argv[3], "--azar") == 0;
     std::mt19937_64 rng(1990);                       // semilla fija: siempre el mismo resultado
-    std::uniform_int_distribution<int> dado(0, puertas - 1);
+    // Un número al azar de 0 a puertas-1. No usamos std::uniform_int_distribution porque cada compilador
+    // la implementa distinto (macOS y Linux darían otros resultados con la misma semilla). Esto es lo mismo
+    // que hace la de macOS: toma los bits justos y descarta los valores que se pasan.
+    auto dado = [&](std::mt19937_64& g) {
+        uint32_t n = puertas; int w = 0;
+        while ((1u << w) < n) ++w;                    // bits necesarios: 2^w >= puertas
+        uint64_t u;
+        do u = g() & ((1ull << w) - 1); while (u >= n);
+        return (int)u;
+    };
     long long jugadas = 0, ganaQuedarse = 0, ganaCambiar = 0;
     for (long long i = 0; i < n; i++) {
         int auto_ = dado(rng), elegida = dado(rng);
